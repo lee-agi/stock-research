@@ -22,4 +22,5 @@ python3 -m compileall -q skills/stock-research/scripts
 
 ## Version history / 版本历史
 
+- `v0.1.1` (2026-08-30): Added the Apache-2.0 OR MIT-0 dual-license package contract required for consistent multi-registry publication. / 新增 Apache-2.0 OR MIT-0 双许可证打包契约，以支持一致的多 registry 发布。
 - `v0.1.0` (2026-08-30): Initial public community edition with evidence-first research, valuation, safety, and deterministic validation. / 首个公开社区版本，包含证据优先研究、估值、安全和确定性验证。
