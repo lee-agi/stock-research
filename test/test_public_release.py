@@ -12,7 +12,7 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SKILL_ROOT = REPO_ROOT / "skills" / "stock-research"
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 
 class TestPublicPackageContract(unittest.TestCase):
@@ -23,9 +23,13 @@ class TestPublicPackageContract(unittest.TestCase):
             REPO_ROOT / "AGENTS.md",
             REPO_ROOT / "README.md",
             REPO_ROOT / "LICENSE",
+            REPO_ROOT / "LICENSES" / "Apache-2.0.txt",
+            REPO_ROOT / "LICENSES" / "MIT-0.txt",
             REPO_ROOT / "pyproject.toml",
             SKILL_ROOT / "SKILL.md",
             SKILL_ROOT / "LICENSE",
+            SKILL_ROOT / "LICENSES" / "Apache-2.0.txt",
+            SKILL_ROOT / "LICENSES" / "MIT-0.txt",
             SKILL_ROOT / "agents" / "openai.yaml",
             SKILL_ROOT / "references" / "data-quality.md",
             SKILL_ROOT / "references" / "safety.md",
@@ -47,6 +51,34 @@ class TestPublicPackageContract(unittest.TestCase):
         self.assertIn(f'version = "{VERSION}"', pyproject_text)
         self.assertIn(f"v{VERSION}", agents_text)
         self.assertIn(f"v{VERSION}", readme_text)
+
+    def test_dual_license_is_declared_consistently(self) -> None:
+        skill_text = (SKILL_ROOT / "SKILL.md").read_text(encoding="utf-8")
+        pyproject_text = (REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8")
+        root_license = (REPO_ROOT / "LICENSE").read_text(encoding="utf-8")
+        skill_license = (SKILL_ROOT / "LICENSE").read_text(encoding="utf-8")
+        apache_text = (REPO_ROOT / "LICENSES" / "Apache-2.0.txt").read_text(
+            encoding="utf-8"
+        )
+        mit_zero_text = (REPO_ROOT / "LICENSES" / "MIT-0.txt").read_text(
+            encoding="utf-8"
+        )
+        skill_apache_text = (
+            SKILL_ROOT / "LICENSES" / "Apache-2.0.txt"
+        ).read_text(encoding="utf-8")
+        skill_mit_zero_text = (SKILL_ROOT / "LICENSES" / "MIT-0.txt").read_text(
+            encoding="utf-8"
+        )
+
+        expression = "Apache-2.0 OR MIT-0"
+        self.assertIn(f"license: {expression}", skill_text)
+        self.assertIn(f'license = "{expression}"', pyproject_text)
+        self.assertIn(expression, root_license)
+        self.assertEqual(root_license, skill_license)
+        self.assertIn("Apache License", apache_text)
+        self.assertIn("MIT No Attribution", mit_zero_text)
+        self.assertEqual(apache_text, skill_apache_text)
+        self.assertEqual(mit_zero_text, skill_mit_zero_text)
 
     def test_public_skill_excludes_private_overlays_and_artifacts(self) -> None:
         blocked_markers = (
