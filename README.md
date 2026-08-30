@@ -40,6 +40,11 @@ python3 skills/stock-research/scripts/plan_stock_research.py \
 
 This Skill does not place trades, request credentials, or produce executable order payloads. Outputs are general research, not personalized investment advice; data may be delayed or wrong, and investing can result in loss of capital. / 本 Skill 不下单、不索取凭证，也不生成可执行订单载荷；输出属于一般研究，而非个性化投资建议；数据可能延迟或错误，投资可能损失本金。
 
+## License / 许可证
+
+The repository and packaged Skill are dual-licensed under `Apache-2.0 OR MIT-0`; users may choose either license. This keeps the GitHub source and ClawHub distribution terms consistent. / 本仓库及打包 Skill 采用 `Apache-2.0 OR MIT-0` 双许可证，用户可任选其一；这使 GitHub 源码与 ClawHub 分发条款保持一致。
+
 ## Version history / 版本历史
 
+- `v0.1.1` (2026-08-30): Aligned GitHub and ClawHub distribution with an explicit Apache-2.0 OR MIT-0 dual license. / 使用明确的 Apache-2.0 OR MIT-0 双许可证，对齐 GitHub 与 ClawHub 分发。
 - `v0.1.0` (2026-08-30): Initial public community edition. / 首个公开社区版本。
