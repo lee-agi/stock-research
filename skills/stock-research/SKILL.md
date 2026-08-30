@@ -1,9 +1,9 @@
 ---
 name: stock-research
 description: "Conduct evidence-first stock research with dated sources, data-quality gates, valuation, scenario analysis, falsifiable theses, and research-only recommendations. Use for single-stock analysis, peer comparisons, sector or theme baskets, thesis reviews, and buy/hold/watch/pass questions without trade execution. / 使用带日期的来源、数据质量门、估值、情景分析、可证伪论点和仅研究建议开展证据优先的股票研究；适用于个股分析、同业比较、行业或主题篮子、论点复盘，以及不执行交易的买入、持有、观察或放弃问题。"
-license: Apache-2.0
+license: Apache-2.0 OR MIT-0
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Evidence-First Stock Research / 证据优先股票研究
@@ -115,4 +115,5 @@ Read [references/workflows.md](references/workflows.md) for mode-specific checkl
 
 ## Version history / 版本历史
 
+- `0.1.1` (2026-08-30): Added an explicit Apache-2.0 OR MIT-0 dual-license contract for consistent GitHub and ClawHub distribution. / 新增明确的 Apache-2.0 OR MIT-0 双许可证契约，使 GitHub 与 ClawHub 分发保持一致。
 - `0.1.0` (2026-08-30): Initial public community edition with evidence, valuation, safety, and no-trade gates. / 首个公开社区版本，包含证据、估值、安全和禁止交易门禁。
