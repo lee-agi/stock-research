@@ -1,9 +1,9 @@
 [project]
 name = "evidence-first-stock-research-skill"
-version = "0.1.0"
+version = "0.1.1"
 description = "Evidence-first, research-only Agent Skill for stock analysis."
 requires-python = ">=3.10"
-license = "Apache-2.0"
+license = "Apache-2.0 OR MIT-0"
 
 [tool.pytest.ini_options]
 testpaths = ["test"]
